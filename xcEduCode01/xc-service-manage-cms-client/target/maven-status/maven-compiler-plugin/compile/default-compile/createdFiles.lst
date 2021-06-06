@@ -1,7 +1,0 @@
-com\xuecheng\manage_cms_client\config\MongoConfig.class
-com\xuecheng\manage_cms_client\dao\CmsSiteRepository.class
-com\xuecheng\manage_cms_client\service\PageService.class
-com\xuecheng\manage_cms_client\controller\ConsumerPostPage.class
-com\xuecheng\manage_cms_client\MangeCmsClientApplication.class
-com\xuecheng\manage_cms_client\config\RabbitmqConfig.class
-com\xuecheng\manage_cms_client\dao\CmsPageRepository.class
