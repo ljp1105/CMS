@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <properties resource="jdbc.properties">
+<!--        <property name="driver" value="com.mysql.jdbc.Driver"/>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/hibernate_demo01"/>-->
+        <property name="jdbc.user" value="root"/>
+        <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
+        <property name="org.apache.ibatis.parsing.PropertyParser.default-value-separator" value="?:"/>
+        <!--        <property name="password" value="123456"/>-->
+    </properties>
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="autoMappingBehavior" value="FULL"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.casic.domain"/>
+    </typeAliases>
+    <objectFactory type="com.casic.Mybatis.CartObjectFactory"></objectFactory>
+    <environments default="develompent">
+        <environment id="develompent">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc:user?:root}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <databaseIdProvider type="DB_VENDOR"></databaseIdProvider>
+    <mappers>
+        <mapper resource="com/casic/dao/CustomerMapper.xml"></mapper>
+    </mappers>
+
+</configuration>
